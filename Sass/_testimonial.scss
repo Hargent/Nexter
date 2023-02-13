@@ -1,0 +1,13 @@
+.testimonial {
+	// grid-area: 3 / center-start / 4 / center-end;
+	&__pictures {
+		background-color: var(--primary-color);
+		grid-column: full-start / col-end 8;
+	}
+	&__content {
+		background-color: var(--light-grey-1);
+		// grid-area: 3 / center-start / 4 / center-end;
+
+		grid-column: col-start 9 / full-end;
+	}
+}

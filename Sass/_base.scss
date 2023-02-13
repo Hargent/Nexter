@@ -1,15 +1,58 @@
-// COLOR VARIABLES
-$color-primary: #c69963;
-$color-primary-dark: #B28451;
+:root {
+	// COLOR VARIABLES
+	--primary-color: #c69963;
+	--primary-dark-color: #b28451;
 
-$color-secondary: #101d2c;
+	--secondary-color: #101d2c;
 
-$color-grey-light-1: #f9f7f6;
-$color-grey-light-2: #aaa;
+	--light-grey-1: #f9f7f6;
+	--light-grey-2: #aaa;
 
-$color-grey-dark-1: #54483A;
-$color-grey-dark-2: #6D5D4B;
+	--dark-grey-1: #54483a;
+	--dark-grey-2: #6d5d4b;
 
-// FONT VARIABLES
-$font-primary: 'Nunito', sans-serif;
-$font-display: 'Josefin Sans', sans-serif;
+	// FONT VARIABLES
+	--primary-font: "Nunito", sans-serif;
+	--display-font: "Josefin Sans", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+	padding: 0;
+	margin: 0;
+	box-sizing: inherit;
+}
+html {
+	font-size: 100%; //1rem = 16px
+	box-sizing: border-box;
+}
+body {
+	box-sizing: inherit;
+	font: {
+		family: var(--primary-font);
+		weight: 300;
+	}
+	color: var(--dark-grey-2);
+	list-style: none;
+	line-height: 1.6;
+}
+.container {
+	display: grid;
+	grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
+	grid-template-columns:
+		[sidebar-start]5rem
+		[sidebar-end full-start] minmax(7.5rem, 1fr)
+		[center-start]repeat(
+			16,
+			[col-start] minmax(min-content, 4.375rem) [col-end]
+		)
+		[center-end]
+		minmax(7.5rem, 1fr) [full-end];
+	// align-tracks: center;
+	& > * {
+		padding: 1.25rem;
+		font-size: 0.9375rem;
+	}
+	justify-content: center;
+}
