@@ -1,4 +1,18 @@
 .header {
 	background-color: var(--dark-grey-1);
 	grid-column: full-start / col-end 12;
+	&__seen {
+		&-text {
+		}
+		&-logos {
+			display: grid;
+
+			grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+
+			img {
+				width: 100%;
+				// heigh
+			}
+		}
+	}
 }

@@ -2,14 +2,15 @@
 	// grid-area: 3 / center-start / 4 / center-end;
 	&__pictures {
 		background : {
-			// color: var(--primary-color);
+			color: var(--primary-color);
 			image: linear-gradient(
-					rgba(var(--primary-color), 0.5),
-					rgba(var(--primary-color), 0.5)
+					to right,
+					var(--gradient-color),
+					var(--gradient-color)
 				),
 				url(../img/back.jpg);
 			size: cover;
-			filter: var(--primary-color);
+			// blend-mode: color-burn;
 		}
 
 		// position: relative;

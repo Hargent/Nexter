@@ -2,3 +2,43 @@
 	background-color: var(--secondary-color);
 	grid-column: full-start / full-end;
 }
+.nav {
+	list-style: none;
+
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(12.5rem, 1fr));
+	justify-items: center;
+	gap: 1.25rem;
+	align-items: center;
+
+	&__link:link,
+	&__link:visited {
+		color: #fff;
+		transition: all 0.3s;
+
+		font : {
+			size: 0.875rem;
+			family: var(--display-font);
+		}
+		text : {
+			align: center;
+			transform: uppercase;
+			decoration: none;
+		}
+
+		padding: 1rem;
+		display: block;
+		border-radius: 5px;
+	}
+	&__link:hover,
+	&__link:active {
+		background-color: rgba(#fff, 0.05);
+		transform: translateY(-3px);
+	}
+}
+.copyright {
+	font-size: 0.875rem;
+	color: var(--light-grey-2);
+	text-align: center;
+	margin-top: 3.75rem;
+}
