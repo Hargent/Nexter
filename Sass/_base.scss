@@ -11,12 +11,19 @@
 	--dark-grey-1: #54483a;
 	--dark-grey-2: #6d5d4b;
 
-	--gradient-color: #c6996380;
+	--gradient-color: hsla(33, 46%, 58%, 0.05);
+	--dark-gradient-color: rgba(16, 29, 44, 0.037);
 	// FONT VARIABLES
 	--primary-font: "Nunito", sans-serif;
 	--display-font: "Josefin Sans", sans-serif;
 }
+// RESPONSIVE BREAKPOINTS
+$bp-largest: 75em; //1200px;
+$bp-large: 62.5em; //1000px
+$bp-mid: 50em; //900px;
+$bp-small: 37.5em; //900px;
 
+//
 *,
 *::before,
 *::after {
@@ -27,6 +34,12 @@
 html {
 	font-size: 100%; //1rem = 16px
 	box-sizing: border-box;
+	@media only screen and (max-width: $bp-largest) {
+		font-size: 62.5%; //1rem =10px
+	}
+	@media only screen and (max-width: $bp-large) {
+		font-size: 50%; //1rem =8px
+	}
 }
 body {
 	box-sizing: inherit;
@@ -56,4 +69,20 @@ body {
 		font-size: 0.9375rem;
 	}
 	justify-content: center;
+
+	// media
+	@media only screen and (max-width: $bp-large) {
+		grid-template-rows: 6rem 80vh min-content 40vw repeat(3, min-content);
+		grid-template-columns:
+			[sidebar-end full-start] minmax(7.5rem, 1fr)
+			[center-start]repeat(
+				16,
+				[col-start] minmax(min-content, 4.375rem) [col-end]
+			)
+			[center-end]
+			minmax(7.5rem, 1fr) [full-end];
+	}
+	@media only screen and (max-width: $bp-mid) {
+		grid-template-rows: 6rem calc(100vh - 6rem);
+	}
 }

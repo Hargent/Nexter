@@ -1,17 +1,71 @@
 .header {
 	background-color: var(--dark-grey-1);
 	grid-column: full-start / col-end 12;
+	background : {
+		image: linear-gradient(
+				var(--dark-gradient-color),
+				var(--dark-gradient-color)
+			),
+			url(../img/hero.jpeg);
+		size: cover;
+		position: center;
+		blend-mode: color-burn;
+	}
+
+	display: grid;
+	grid-template-columns: minmax(min-content, max-content);
+	grid-template-rows: 1fr min-content minmax(3.75rem, min-content) 1fr;
+	grid-row-gap: 1rem;
+	justify-content: center;
+
+	padding: 5rem;
+	padding-top: 2.5rem;
+
+	@media only screen and (max-width: $bp-mid) {
+		grid-column: 1/-1;
+	}
+	@media only screen and (max-width: $bp-small) {
+		padding: 3.25rem;
+	}
+
+	&__btn {
+		align-self: center;
+		justify-self: start;
+	}
+
+	&__logo {
+		height: 1.875rem;
+		justify-self: center;
+	}
 	&__seen {
 		&-text {
+			display: grid;
+			grid-template-columns: 1fr max-content 1fr;
+			grid-column-gap: 2rem;
+			align-items: center;
+
+			font-size: 1.6rem;
+			color: var(--light-grey-2);
+			&::before,
+			&::after {
+				content: "";
+				height: 1px;
+				display: block;
+				background-color: currentColor;
+			}
 		}
 		&-logos {
 			display: grid;
 
-			grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+			grid-template-columns: repeat(4, 1fr);
+			grid-column-gap: 1.875rem;
+			justify-items: center;
+			align-items: center;
 
 			img {
-				width: 100%;
-				// heigh
+				max-height: 1.57rem;
+				max-width: 100%;
+				filter: brightness(70%);
 			}
 		}
 	}
