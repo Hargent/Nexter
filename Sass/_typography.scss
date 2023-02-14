@@ -1,0 +1,58 @@
+%heading {
+	font: {
+		family: var(--display-font);
+		weight: 400;
+	}
+	text-transform: capitalize;
+}
+.heading-1 {
+	@extend %heading;
+}
+.heading-2 {
+	@extend %heading;
+	font: {
+		size: 2.5rem;
+		style: italic;
+	}
+	&--light {
+		color: var(--light-grey-1);
+	}
+	&--dark {
+		color: var(--dark-grey-1);
+	}
+	line-height: 1;
+}
+.heading-3 {
+	@extend %heading;
+	font-size: 1rem;
+	color: var(--primary-color);
+	text-transform: uppercase;
+}
+.heading-4 {
+	@extend %heading;
+	font-size: 1.2rem;
+	&--light {
+		color: var(--light-grey-1);
+	}
+	&--dark {
+		color: var(--dark-grey-1);
+	}
+}
+.btn {
+	background-color: var(--primary-color);
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	font: {
+		size: 1rem;
+		family: var(--display-font);
+	}
+	text-transform: uppercase;
+	padding: 1rem 1.25rem;
+	cursor: pointer;
+	transition: all 0.3s;
+
+	&:hover {
+		background-color: var(--primary-dark-color);
+	}
+}
